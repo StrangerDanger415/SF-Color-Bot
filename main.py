@@ -4,10 +4,17 @@ import tweepy
 import json
 import pytz
 from datetime import datetime
+import os
+from os import environ
+
+Consumer_Key = environ['CONSUMER_KEY']
+Consumer_Secret = environ['CONSUMER_SECRET']
+Access_Key = environ['ACCESS_KEY']
+Access_Secret = environ['ACCESS_SECRET']
 
 
-auth = tweepy.OAuthHandler("FCOFRfItfXNkMAXdV2qJnVWY0", "wXUEZNXxD0y3J6jTS9XXfpEkwh4V8O1if3CA8LBN1yxA8SY4IO")
-auth.set_access_token("1348188829543395333-qCJaTtfjBHRYIItCCNlmLGidkpZmuo","BsKuKL60fpe1E4MoRmUI4JyH10nlgiiGjBaJCtSqEAuUO")
+auth = tweepy.OAuthHandler(Consumer_Key, Consumer_Secret)
+auth.set_access_token(Access_Key,Access_Secret)
 
 api = tweepy.API(auth)
 
